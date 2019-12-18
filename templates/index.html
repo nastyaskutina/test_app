@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Опрос про цвета</title>
+</head>
+<body>
+<h2>Опрос про цвета</h2>
+<form class="questionary" action="/process" method = 'GET'>
+    <fieldset>
+    <legend><b>Анкета</b></legend>
+        <p>Что-то про анкету</p>
+    <div class="elem">
+        <b>Ваш пол:</b><br>
+        <input type="radio" name="gender" id="male" value="m">
+            <label for="male">Мужской</label><br>
+        <input type="radio" name="gender" id="female" value="f">
+            <label for="female">Женский</label><br>
+    </div>
+    <br>
+    <div class="elem">
+        <b>Введите Ваш возраст:</b><br>
+        <input type="number" name="age" placeholder="23" required pattern='\d+'>
+    </div>
+    <br>
+    <div class="elem">
+        <b>Ваш родной город:</b><br>
+        <input type="text" name="city" placeholder="Екатеринбург" required pattern='[A-Za-zА-Яа-яЁё]+'>
+    </div>
+    <br>
+    <div class="elem">
+        <b>Ваш родной язык:</b><br>
+        <input type="text" name="language" placeholder="Русский" required pattern='[A-Za-zА-Яа-яЁё]+'>
+    </div>
+    <br>
+    <div class="elem">
+        <b>Ваше образование:</b><br>
+        <input type="radio" name="edu" id="elementary-school" value="elementary-school">
+            <label for="elementary-school">Начальное</label><br>
+        <input type="radio" name="edu" id="middle-school" value="middle-school">
+            <label for="middle-school">Среднее общее</label><br>
+        <input type="radio" name="edu" id="high-school" value="high-school">
+            <label for="high-school">Среднее полное</label><br>
+        <input type="radio" name="edu" id="professional" value="professional">
+            <label for="professional">Среднее профессиональное</label><br>
+        <input type="radio" name="edu" id="undergraduate" value="undergraduate">
+            <label for="undergraduate">Неоконченное высшее</label><br>
+        <input type="radio" name="edu" id="graduate" value="graduate">
+            <label for="graduate">Высшее</label><br>
+        <input type="radio" name="edu" id="none" value="none">
+            <label for="none">Нет</label><br>
+    </div>
+    </fieldset>
+    <fieldset>
+    <legend><b>Вопросы</b></legend>
+    <p>Что-то про опрос</p>
+    <table>
+        <tr>
+            <td class="colour" bgcolor="{{ colors[0].question }}" width="50"></td>
+            <td>
+                <input type="radio" name="qu1" id="qu1-ans1" value="pink">
+                <label for="qu1-ans1">Розовый</label><br>
+                <input type="radio" name="qu1" id="qu1-ans2" value="purple">
+                <label for="qu1-ans2">Фиолетовый</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="colour" bgcolor="{{ colors[1].question }}" width="50"></td>
+            <td>
+                <input type="radio" name="qu2" id="qu2-ans1" value="yellow">
+                <label for="qu2-ans1">Желтый</label><br>
+                <input type="radio" name="qu2" id="qu2-ans2" value="green">
+                <label for="qu2-ans2">Зеленый</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="colour" bgcolor="{{ colors[2].question }}" width="50"></td>
+            <td>
+                <input type="radio" name="qu3" id="qu3-ans1" value="purple">
+                <label for="qu3-ans1">Фиолетовый</label><br>
+                <input type="radio" name="qu3" id="qu3-ans2" value="blue">
+                <label for="qu3-ans2">Синий</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="colour" bgcolor="{{ colors[3].question }}" width="50"></td>
+            <td>
+                <input type="radio" name="qu4" id="qu4-ans1" value="light-blue">
+                <label for="qu4-ans1">Голубой</label><br>
+                <input type="radio" name="qu4" id="qu4-ans2" value="green">
+                <label for="qu4-ans2">Зеленый</label><br>
+            </td>
+        </tr>
+    </table>
+    </fieldset>
+<input type="submit" value="Отправить">
+</form>
+<p><a href='/statistics'>Статистика</a></p>
+</body>
+</html>
