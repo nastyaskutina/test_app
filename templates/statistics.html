@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="static/mystyle.css">
+    <title>Статистика</title>
+</head>
+<body>
+    <div class="content">
+        <h2>Немного статистики</h2>
+        <div class="text_stats">
+            <p>Минимальный возраст среди прошедших опрос: <b>{{ all_info['age_min'] }}</b></p>
+            <p>Максимальный возраст среди прошедших опрос: <b>{{ all_info['age_max'] }}</b></p>
+            <p>Средний возраст среди прошедших опрос: <b>{{ all_info['age_mean'] }}</b></p>
+            <p>Всего опрос прошло <b>{{ all_info['total_count'] }}</b> людей </p>
+        </div>
+        <table>
+                <tr>
+                    <td class="colour" bgcolor="{{ colors[0].question }}"></td>
+                    <td class="colour_text">
+                        {% if all_info['qu1_answer'] == 'мнения разделились' %}
+                            По поводу этого оттенка {{ all_info['qu1_answer'] }}
+                        {% else %}
+                            Большинство информантов ({{ all_info['qu1_answer'][0] }}) считают, что этот цвет скорее
+                            {{ all_info['qu1_answer'][1] }}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="colour" bgcolor="{{ colors[1].question }}"></td>
+                    <td class="colour_text">
+                        {% if all_info['qu2_answer'] == 'мнения разделились' %}
+                            По поводу этого оттенка {{ all_info['qu2_answer'] }}: одинаковое количество информантов
+                            проголосовало за каждый из вариантов
+                        {% else %}
+                            Большинство информантов ({{ all_info['qu2_answer'][0] }}) считают, что этот цвет скорее
+                            {{ all_info['qu2_answer'][1] }}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="colour" bgcolor="{{ colors[2].question }}"></td>
+                    <td class="colour_text">
+                        {% if all_info['qu3_answer'] == 'мнения разделились' %}
+                            По поводу этого оттенка {{ all_info['qu3_answer'] }}: одинаковое количество информантов
+                            проголосовало за каждый из вариантов
+                        {% else %}
+                            Большинство информантов ({{ all_info['qu3_answer'][0] }}) считают, что этот цвет скорее
+                            {{ all_info['qu3_answer'][1] }}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="colour" bgcolor="{{ colors[3].question }}"></td>
+                    <td class="colour_text">
+                        {% if all_info['qu4_answer'] == 'мнения разделились' %}
+                            По поводу этого оттенка {{ all_info['qu4_answer'] }}: одинаковое количество информантов
+                            проголосовало за каждый из вариантов
+                        {% else %}
+                            Большинство информантов ({{ all_info['qu4_answer'][0] }}) считают, что этот цвет скорее
+                            {{ all_info['qu4_answer'][1] }}
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        <div class="link"><a href='/'>Перейти к опросу</a></div>
+    </div>
+</body>
+
+</html>
